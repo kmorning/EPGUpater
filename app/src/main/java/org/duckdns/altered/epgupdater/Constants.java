@@ -42,4 +42,7 @@ public class Constants {
     // The background thread action failed
     public static final int STATE_ACTION_FAILED = -1;
 
+    // Unknown action
+    public static final int STATE_ACTION_UNKNOWN = -2;
+
 }

@@ -62,21 +62,27 @@ public class MainActivity extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             int statusCode = intent.getIntExtra(Constants.EXTENDED_DATA_STATUS,
-                    Constants.STATE_ACTION_FAILED);
+                    Constants.STATE_ACTION_UNKNOWN);
             TextView textView = findViewById(R.id.textView);
 
             switch (statusCode) {
                 case Constants.STATE_ACTION_STARTED:
                     textView.setText(getString(R.string.status_start));
+                    break;
                 case Constants.STATE_ACTION_CONNECTING:
                     textView.setText(getString(R.string.status_connect));
+                    break;
                 case Constants.STATE_ACTION_DOWNLOADING:
                     textView.setText(getString(R.string.status_download));
+                    break;
                 case Constants.STATE_ACTION_DOWNLOAD_COMPLETE:
                     textView.setText(getString(R.string.status_download_done));
+                    break;
                 case Constants.STATE_ACTION_FAILED:
                     textView.setText(getString(R.string.status_fail));
+                    break;
                 default:
+                    textView.setText("UNKNOWN");
             }
         }
     };
