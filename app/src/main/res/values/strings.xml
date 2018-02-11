@@ -6,4 +6,5 @@
     <string name="status_download">DOWNLOADING</string>
     <string name="status_download_done">DOWNLOAD DONE</string>
     <string name="status_fail">FAILED</string>
+    <string name="status_start">STARTED</string>
 </resources>
