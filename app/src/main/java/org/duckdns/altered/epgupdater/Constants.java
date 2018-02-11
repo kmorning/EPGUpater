@@ -19,6 +19,9 @@ public class Constants {
     // Defines the key for the log "extra" in an Intent
     public static final String EXTENDED_STATUS_PROGRESS = "org.duckdns.altered.epgupdater.PROGRESS";
 
+    // XML Save File Path
+    public static final String XML_SAVE_FILE_PATH = "/sdcard/epg.xml";
+
     // Status values to broadcast
 
     // The download is starting
