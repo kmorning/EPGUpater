@@ -9,4 +9,7 @@ package org.duckdns.altered.epgupdater;
 public class Constants {
     // Defines a custom Intent action
     public static final String BROADCAST_ACTION = "org.duckdns.altered.epgupdater.BROADCAST";
+
+    // Defines the key for the status "extra" in an Intent
+    public static final String EXTENDED_DATA_STATUS = "org.duckdns.altered.epgupdater.STATUS";
 }
