@@ -26,7 +26,9 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         // Register for the broadcast based on ACTION string
+
         IntentFilter filter = new IntentFilter(Constants.BROADCAST_ACTION);
+        filter.addCategory(Intent.CATEGORY_DEFAULT);
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, filter);
     }
 
