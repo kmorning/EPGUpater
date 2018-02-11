@@ -127,6 +127,10 @@ public class EPGUpdateService extends IntentService {
         catch (IOException e) {
             e.printStackTrace();
         }
+        catch (SecurityException e)
+        {
+            e.printStackTrace();
+        }
         finally {
             // Report that action failed
             mBroadcaster.broadcastIntentWithState(Constants.STATE_ACTION_FAILED);

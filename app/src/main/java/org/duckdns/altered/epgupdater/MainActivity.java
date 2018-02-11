@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,7 +43,12 @@ public class MainActivity extends Activity {
 
         mServiceIntent = new Intent(this, EPGUpdateService.class);
         mServiceIntent.setData(Uri.parse(xmlUrl));
+        //try {
         startService(mServiceIntent);
+        //}
+        //catch (Exception ex) {
+        //    Log.e("Error starting service", ex.getMessage());
+        //}
     }
 
     public void updateEPG(View view) {
