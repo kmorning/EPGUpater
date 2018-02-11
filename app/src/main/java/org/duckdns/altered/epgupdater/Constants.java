@@ -12,4 +12,7 @@ public class Constants {
 
     // Defines the key for the status "extra" in an Intent
     public static final String EXTENDED_DATA_STATUS = "org.duckdns.altered.epgupdater.STATUS";
+
+    // Defines the key for the log "extra" in an Intent
+    public static final String EXTENDED_STATUS_LOG = "org.duckdns.altered.epgupdater.LOG";
 }
