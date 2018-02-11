@@ -96,7 +96,8 @@ public class EPGUpdateService extends IntentService {
                     // keep track of how much is downloaded
                     int totalBytesRead = 0;
                     int progressDone = 0;
-                    // TODO: broadcast status downloading
+                    // Report downloading state
+                    mBroadcaster.broadcastIntentWithState(Constants.STATE_ACTION_DOWNLOADING);
 
                     int bytesRead = -1;
                     byte[] buffer = new byte[BUFFER_SIZE];
@@ -109,8 +110,15 @@ public class EPGUpdateService extends IntentService {
 
                     outputStream.close();
                     inputStream.close();
+                    httpURLConnection.disconnect();
+                    // Report download complete
+                    mBroadcaster.broadcastIntentWithState(Constants.STATE_ACTION_DOWNLOAD_COMPLETE);
                 }
 
+            }
+            else {
+                // Report that action failed
+                mBroadcaster.broadcastIntentWithState(Constants.STATE_ACTION_FAILED);
             }
         }
         catch (MalformedURLException e) {
@@ -118,6 +126,10 @@ public class EPGUpdateService extends IntentService {
         }
         catch (IOException e) {
             e.printStackTrace();
+        }
+        finally {
+            // Report that action failed
+            mBroadcaster.broadcastIntentWithState(Constants.STATE_ACTION_FAILED);
         }
     }
 }
