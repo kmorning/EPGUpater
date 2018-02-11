@@ -3,6 +3,7 @@ package org.duckdns.altered.epgupdater;
 import android.app.IntentService;
 import android.content.Intent;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -91,7 +92,10 @@ public class EPGUpdateService extends IntentService {
                     InputStream inputStream = urlConnection.getInputStream();
 
                     // Save to file
-                    FileOutputStream outputStream = new FileOutputStream(Constants.XML_SAVE_FILE_PATH);
+                    //FileOutputStream outputStream = new FileOutputStream(Constants.XML_SAVE_FILE_PATH);
+                    // Save to internal storage instead
+                    File file = new File(getFilesDir(), "guide.xml");
+                    FileOutputStream outputStream = new FileOutputStream(file);
 
                     // keep track of how much is downloaded
                     int totalBytesRead = 0;
@@ -123,15 +127,18 @@ public class EPGUpdateService extends IntentService {
         }
         catch (MalformedURLException e) {
             e.printStackTrace();
+            // Report that action failed
+            mBroadcaster.broadcastIntentWithState(Constants.STATE_ACTION_FAILED);
+
         }
         catch (IOException e) {
             e.printStackTrace();
+            // Report that action failed
+            mBroadcaster.broadcastIntentWithState(Constants.STATE_ACTION_FAILED);
         }
         catch (SecurityException e)
         {
             e.printStackTrace();
-        }
-        finally {
             // Report that action failed
             mBroadcaster.broadcastIntentWithState(Constants.STATE_ACTION_FAILED);
         }
