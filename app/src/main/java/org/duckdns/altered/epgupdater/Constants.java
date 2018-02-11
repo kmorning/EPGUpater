@@ -16,6 +16,9 @@ public class Constants {
     // Defines the key for the log "extra" in an Intent
     public static final String EXTENDED_STATUS_LOG = "org.duckdns.altered.epgupdater.LOG";
 
+    // Defines the key for the log "extra" in an Intent
+    public static final String EXTENDED_STATUS_PROGRESS = "org.duckdns.altered.epgupdater.PROGRESS"
+
     // Status values to broadcast
 
     // The download is starting
