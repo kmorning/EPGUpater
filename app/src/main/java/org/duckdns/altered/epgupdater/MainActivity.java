@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -42,6 +43,10 @@ public class MainActivity extends Activity {
         mServiceIntent = new Intent(this, EPGUpdateService.class);
         mServiceIntent.setData(Uri.parse(xmlUrl));
         startService(mServiceIntent);
+    }
+
+    public void updateEPG(View view) {
+        launchEPGUpdateService();
     }
 
     // Define the callback for broadcast data received
