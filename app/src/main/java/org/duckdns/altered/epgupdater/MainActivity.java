@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.TextView;
@@ -35,7 +36,11 @@ public class MainActivity extends Activity {
     }
 
     public void launchEPGUpdateService() {
+        // hard code xml url for now
+        String xmlUrl = "https://raw.githubusercontent.com/kens13/epg/master/guide_kens.xml";
+
         mServiceIntent = new Intent(this, EPGUpdateService.class);
+        mServiceIntent.setData(Uri.parse(xmlUrl));
         startService(mServiceIntent);
     }
 
