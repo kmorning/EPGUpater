@@ -1,4 +1,4 @@
-package org.duckdns.altered.backgroundservice;
+package org.duckdns.altered.epgupdater;
 
 /**
  * Created by kmorning on 2018-02-10.

@@ -1,4 +1,4 @@
-package org.duckdns.altered.backgroundservice;
+package org.duckdns.altered.epgupdater;
 
 import android.app.IntentService;
 import android.content.Intent;
