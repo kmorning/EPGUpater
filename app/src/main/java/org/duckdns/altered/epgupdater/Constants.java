@@ -30,16 +30,16 @@ public class Constants {
     // The background thread is connecting to the RSS feed
     public static final int STATE_ACTION_CONNECTING = 1;
 
-    // The background thread is parsing the RSS feed
-    public static final int STATE_ACTION_PARSING = 2;
+    // The background thread is downloading xml data
+    public static final int STATE_ACTION_DOWNLOADING = 2;
 
-    // The background thread is writing data to the content provider
-    public static final int STATE_ACTION_WRITING = 3;
+    // The background thread has finished downloading xml
+    public static final int STATE_ACTION_DOWNLOAD_COMPLETE = 3;
 
     // The background thread is done
     public static final int STATE_ACTION_COMPLETE = 4;
 
-    // The background thread is doing logging
-    public static final int STATE_LOG = -1;
+    // The background thread action failed
+    public static final int STATE_ACTION_FAILED = -1;
 
 }
