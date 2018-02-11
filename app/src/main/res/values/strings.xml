@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EPGUpdater</string>
+    <string name="status_idle">IDLE</string>
+    <string name="update_btn">Update</string>
+    <string name="status_connect">CONNECTING</string>
+    <string name="status_download">DOWNLOADING</string>
+    <string name="status_download_done">DOWNLOAD DONE</string>
+    <string name="status_fail">FAILED</string>
 </resources>
